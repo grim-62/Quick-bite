@@ -49,7 +49,7 @@ const RazorpayPaymentForm = () => {
           image: 'https://dummyimage.com/600x400/000/fff',
           order_id: res.order_id,
           handler: function (response) {
-            alert('Payment Succeeded!');
+            toast.success('Payment Succeeded!');
           },
           prefill: {
             name: res.name,
@@ -66,15 +66,15 @@ const RazorpayPaymentForm = () => {
 
         const rzp = new window.Razorpay(options);
         rzp.on('payment.failed', function () {
-          alert('Payment Failed. Try again.');
+         toast.error('Payment Failed. Try again.');
         });
         rzp.open();
       } else {
-        alert(res.msg || 'Something went wrong while creating the order.');
+        toast.error(res.msg || 'Something went wrong while creating the order.');
       }
     } catch (error) {
       console.error('Error creating Razorpay order:', error);
-      alert('Something went wrong! Please try again.');
+      toast.error('Something went wrong! Please try again.');
     }
   };
 
