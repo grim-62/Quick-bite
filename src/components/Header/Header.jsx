@@ -3,13 +3,16 @@ import './Header.css'
 
 const Header = () => {
     return (
-        <div className='header'>
+        <header className='header'>
             <div className='header-contents'>
-                <h2>Order your favourite food here</h2>
-                <p>Choose from a diverse menu featuring a delectable array of dishes crafted with the finest ingredients and culinary expertise. Our mission is to satisfy your cravings and elevate your dining experience, one delicious meal at a time.</p>
-                <button>View Menu</button>
+                <h2>Order Your Favourite Food Here</h2>
+                <p>
+                    Choose from a diverse menu featuring a delectable array of dishes
+                    crafted with the finest ingredients and culinary expertise.
+                </p>
+                <button aria-label="View our full menu">View Menu</button>
             </div>
-        </div>
+        </header>
     )
 }
 
